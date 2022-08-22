@@ -3,6 +3,10 @@ const axios = require("axios");
 const app = express();
 const port = 5001;
 
+app.get("/", async (req, res) => {
+  res.status(200).json({ Message: "This is an API fetcher for music app!" });
+});
+
 app.get("/api/get_atists", async (req, res) => {
   const input = req.query.name;
   const fetchedData = await getMusician(input);
